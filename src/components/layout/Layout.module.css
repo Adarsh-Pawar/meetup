@@ -1,0 +1,9 @@
+.main {
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .main h1 {
+    margin-left: 2rem;
+  }
