@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import classes from './MainNavigation.module.css'
 import logo from '../../assets/logo.png'
 
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
-        <div className={classes.logo}>
+        
+        <Link to='/'><div className={classes.logo}>
         <img src={logo} alt="Logo" />
-        React-MeetUp
-        </div>
+        MeetUp
+        </div></Link>
+        
         <nav>
             <ul>
                 <li>
