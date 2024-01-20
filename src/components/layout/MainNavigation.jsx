@@ -9,7 +9,7 @@ const MainNavigation = () => {
         
         <Link to='/'><div className={classes.logo}>
         <img src={logo} alt="Logo" />
-        MeetUp
+        Meet-Up
         </div></Link>
         
         <nav>
