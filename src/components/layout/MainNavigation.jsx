@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useClickAway } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
@@ -11,6 +11,8 @@ const MainNavigation = () => {
   const ref = useClickAway(() => {
     setOpen(false);
   });
+  
+
   return (
     <header className={classes.header}>
       <Link to="/">
@@ -48,7 +50,6 @@ const MainNavigation = () => {
     style={{
       transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
       transition: 'transform 0.3s ease-out',
-      overflow: 'hidden',
     }}
   >
     <ul>
