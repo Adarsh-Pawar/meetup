@@ -43,21 +43,26 @@ const MainNavigation = () => {
           size={36}
         />
         
-          {isOpen &&
-            <div className={classes.hamburgerLinks} >
-            <ul>
-            <li onClick={() => setOpen(false)}>
-              <Link to="/">All Meetups</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link to="/new-meetup">New Meetup</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link to="/favourites" >Favourites</Link>
-            </li>
-          </ul>
-          </div>
-        }
+        <div 
+    className={classes.hamburgerLinks}
+    style={{
+      transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+      transition: 'transform 0.3s ease-out',
+      overflow: 'hidden',
+    }}
+  >
+    <ul>
+      <li onClick={() => setOpen(false)}>
+        <Link to="/">All Meetups</Link>
+      </li>
+      <li onClick={() => setOpen(false)}>
+        <Link to="/new-meetup">New Meetup</Link>
+      </li>
+      <li onClick={() => setOpen(false)}>
+        <Link to="/favourites">Favourites</Link>
+      </li>
+    </ul>
+  </div>
         
       </nav>
     </header>

@@ -55,7 +55,7 @@
     margin-left: 0.5rem;
   } */
 
-  a:hover::before, li:hover > a::before {
+  .desktopNav a:hover::before, li:hover > a::before {
     visibility: visible;
     transform: scaleX(1);
   }
@@ -92,9 +92,9 @@
     }
 
     .hamburgerNav {
-      display: flex;
-      overflow: hidden;
+      display: inline-block;
     }
+
 
     .header {
       height: 5rem;
@@ -103,16 +103,19 @@
     .hamburgerLinks{
       position: absolute;
       right: 0;
-      top: 4.5rem;
-      padding: 20px 20px;
-      background-color: #E8D8C4;
+      top: 5rem;
+      padding: 30px 20px;
+      background-color: #FFDFDF;
       text-align: left;
       border-radius: 4px;
+      transition: transform 1s ease-out;
+      transform: translateY(10%);
     }
+
 
     .hamburgerLinks ul {
       display: grid;
-      gap:  0.5rem;
+      gap: 2rem;
     }
 
     .hamburgerLinks li {
