@@ -45,3 +45,13 @@
   .actions button:active {
     background-color: #ffe2ed;
   }
+
+  @media only screen and (max-width:1290px) {
+    .image {
+      height: 12rem;
+    }
+
+    .image {
+      max-height: 12rem;
+    }
+  }

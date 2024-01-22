@@ -11,7 +11,7 @@ export const MeetupProvider = (props) => {
     setFavourites((prevFavourites) => {
         const isAlreadyFavourite = prevFavourites.some((existingMeetup) => existingMeetup.id === meetup.id)
         if (isAlreadyFavourite) {
-          toast.warning('ALready added to Favourites!', {
+          toast.warning('Already in the Favourites!', {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
