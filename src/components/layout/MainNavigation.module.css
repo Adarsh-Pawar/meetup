@@ -6,7 +6,6 @@
     justify-content: space-between;
     background-color: #77002e;
     padding: 0 10% 0 3%;
-    overflow-x: hidden;
   }
   
   .logo {
@@ -48,13 +47,6 @@
     color: white;
   }
   
-  /* .badge {
-    background-color: #cc2062;
-    color: white;
-    border-radius: 12px;
-    padding: 0 1rem;
-    margin-left: 0.5rem;
-  } */
 
   .desktopNav a:hover::before, li:hover > a::before {
     visibility: visible;
@@ -104,7 +96,7 @@
     .hamburgerLinks{
       position: absolute;
       right: 0;
-      top: 5rem;
+      top: 3.5rem;
       padding: 30px 20px;
       background-color: #FFDFDF;
       text-align: left;

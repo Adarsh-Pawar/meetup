@@ -21,9 +21,3 @@ h2 {
   font-size: 1.5rem;
   color: #2c292b;
 }
-
-@media only screen and (max-width:1290px) {
-  body {
-    overflow-x: hidden;
-  }
-}
