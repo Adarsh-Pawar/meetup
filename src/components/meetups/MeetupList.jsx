@@ -12,7 +12,6 @@ const MeetupList = (props) => {
             image={meetup.image}
             address={meetup.address}
             description={meetup.description}
-            type={props.type}
           />)}
       </ul>
  

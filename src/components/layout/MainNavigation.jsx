@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useClickAway } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import logo from "../../assets/logo.png";
 import { Squash as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { MeetupContext } from "../../context/main";
 
 const MainNavigation = () => {
+  const { totalFavourites } = useContext(MeetupContext);
   const [isOpen, setOpen] = useState(false);
 
   const ref = useClickAway(() => {
@@ -30,7 +32,8 @@ const MainNavigation = () => {
             <Link to="/new-meetup">New Meetup</Link>
           </li>
           <li>
-            <Link to="/favourites">Favourites</Link>
+            <Link to="/favourites">Favourites<span className={classes.badge}>{totalFavourites}</span></Link>
+            
           </li>
         </ul>
       </nav>
@@ -91,6 +94,7 @@ const MainNavigation = () => {
                   onClick={() => setOpen(false)}
                 >
                   <Link to="/favourites">Favourites</Link>
+                  <span className={classes.badge}>{totalFavourites}</span>
                 </motion.li>
               </ul>
             </motion.div>

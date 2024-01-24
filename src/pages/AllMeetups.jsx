@@ -4,6 +4,7 @@ import MeetupList from "../components/meetups/MeetupList";
 const AllMeetupsPage = () => {
 
 const [allMeetups,setAllMeetups] = useState([]);
+const [isLoading,setIsLoading] = useState(true);
 
 
   useEffect(() => {
@@ -19,8 +20,15 @@ const [allMeetups,setAllMeetups] = useState([]);
         }
       });
       setAllMeetups(meetups);
+      setIsLoading(false)
     });
   },[])
+
+  if(isLoading){
+    return (
+      <div className="loader"></div>
+    )
+  }
 
 
  
@@ -31,7 +39,7 @@ const [allMeetups,setAllMeetups] = useState([]);
     <div className="heading">
     <h1>All Meetups</h1>
     </div>
-      <MeetupList meetups={allMeetups} type='all'/>
+      <MeetupList meetups={allMeetups}/>
     </div>
   );
 };

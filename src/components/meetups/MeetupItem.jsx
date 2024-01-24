@@ -4,20 +4,22 @@ import Card from "../ui/Card";
 import { MeetupContext } from "../../context/main";
 
 const MeetupItem = (props) => {
-  const {addFavourite, removeFavourite} = useContext(MeetupContext);
+  const {addFavourite, removeFavourite, itemIsFavoriteHandler} = useContext(MeetupContext);
+  const itemIsFavorite = itemIsFavoriteHandler(props.id);
 
-  const addToFavouritesHandler = () => {
-    addFavourite({
-      id: props.id,
-      title: props.title,
-      image: props.image,
-      address: props.address,
-      description: props.description
-    })
-  }
-
-  const removeFavouriteHandler = () => {
-    removeFavourite(props.id);
+  const favouriteHandler = () => {
+    if(itemIsFavorite){
+      removeFavourite(props.id);
+    }
+    else{
+      addFavourite({
+        id: props.id,
+        title: props.title,
+        image: props.image,
+        address: props.address,
+        description: props.description
+      })
+    }
   }
 
 
@@ -34,8 +36,7 @@ const MeetupItem = (props) => {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          {props.type==='all' && <button onClick={addToFavouritesHandler}>Add to favourite</button>}
-          {props.type==='fav' && <button onClick={removeFavouriteHandler}>Remove from favourites</button>}
+          <button onClick={favouriteHandler}>{itemIsFavorite ? 'Remove from Favorites' : 'Add To Favorites'}</button>
         </div>
         </Card>
       </li>

@@ -74,6 +74,15 @@
     transition: all 0.5s;
   }
 
+  .badge {
+    background-color: #cc2062;
+    color: white;
+    border-radius: 8px;
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+    
+  }
+
   .hamburgerNav {
     display: none;
   }
